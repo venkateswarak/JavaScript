@@ -1,0 +1,56 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#render0" id='0' value="renderzero" onClick="render0()">render(0)</a></li>
+            <li><a href="#render1" id= '1' value="renderone" onClick="render1()">render(1)</a></li>
+            <li><a href="#render2" id='2' value="rendertwo" onClick="render2()">render(2)</a></li>
+            <li><a href="#render3" id='3' value="renderthree" onClick="render3()">render(3)</a></li>
+        </ul>
+        <p id='output'></p>
+        <script>
+            var array = ['headerContent1', 'footerContent1'];
+            function render0() {
+                var temp = Array.from(array);
+                document.getElementById('output').innerHTML = temp;
+            }
+            function render1() {
+                var temp = Array.from(array);
+                temp.push('bodyContent1');
+                document.getElementById('output').innerHTML = temp;
+            }
+            
+            function render2() {
+                var temp = Array.from(array);
+                for (var i = 0; i < temp.length; i++) {
+                    if(temp[i] == 'footerContent1') {
+                    temp[i] = 'footerContent2';
+                    }
+                };
+                temp.push('bodyContent2');
+                document.getElementById('output').innerHTML = temp;
+            }
+
+            function render3() {
+                var temp = Array.from(array);
+                for (var i = 0; i < array.length; i++) {
+                    if(temp[i] == 'headerContent1') {
+                    temp[i] = 'headerContent2';
+                    }
+                };
+                temp.push('bodyContent3');
+                temp.push('advertisement1');
+                document.getElementById('output').innerHTML = temp;
+                temp = [];
+            }
+    </script>
+    </body>
+</html>
+
+
+
+
+
+
+
